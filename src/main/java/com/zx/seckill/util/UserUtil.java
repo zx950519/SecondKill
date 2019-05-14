@@ -60,7 +60,7 @@ public class UserUtil {
         System.out.println("inserted to db......");
         //登录，生成token
         String urlString = "http://localhost:8080/login/do_login";
-        File file = new File("D:/tokens.txt");
+        File file = new File("H:/tokens.txt");
         if (file.exists()) {
             file.delete();
         }
@@ -103,6 +103,6 @@ public class UserUtil {
     }
 
     public static void main(String[] args) throws Exception {
-        createUser(5000);
+//        createUser(10);
     }
 }
