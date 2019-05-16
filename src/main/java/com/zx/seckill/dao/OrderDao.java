@@ -4,8 +4,10 @@ import com.zx.seckill.domain.OrderInfo;
 import com.zx.seckill.domain.SeckillOrder;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Component;
 
 @Mapper
+//@Component(value = "apiCategoryMapper")
 public interface OrderDao {
 
     @Select("select * from seckill_order where user_id=#{userId} and goods_id=#{goodsId}")

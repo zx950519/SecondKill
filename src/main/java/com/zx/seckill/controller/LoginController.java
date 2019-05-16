@@ -45,8 +45,7 @@ public class LoginController {
     @ResponseBody
     public Result<String> doLogin(HttpServletResponse response, @Valid LoginVO loginVO) {
         log.info("【用户登录】" + loginVO.toString());
-
-        //登录
+        // 登录
         String token = seckillUserService.login(response, loginVO);
         return Result.success(token);
     }

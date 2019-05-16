@@ -58,8 +58,8 @@ import java.util.Map;
  * 秒杀开始之前，先去请求接口获取秒杀地址
  * 思路：
  * 1.接口改造，带上PathVariable参数
- * 2.添加生成地址的接口
- * 3.秒杀收到请求，先验证PathVariable
+ *  * 2.添加生成地址的接口
+ *  * 3.秒杀收到请求，先验证PathVariable
  * <p>
  * 数学公式验证码
  * 点击秒杀之后，先输入验证码，分散用户请求
@@ -165,7 +165,7 @@ public class SeckillController implements InitializingBean {
     @PostMapping("/{path}/seckill")
     @ResponseBody
     @AccessLimit(seconds = 5, maxCount = 5)
-    public Result<Integer> seckill(SeckillUser seckillUser,
+    public Result<Integer> seckill(Model model, SeckillUser seckillUser,
                                    @RequestParam("goodsId") long goodsId,
                                    @PathVariable("path") String path) {
 
@@ -201,6 +201,7 @@ public class SeckillController implements InitializingBean {
 
         //排队中
         return Result.success(0);
+
     }
 
     @ApiOperation("秒杀路径获取接口")
@@ -217,6 +218,7 @@ public class SeckillController implements InitializingBean {
 
         boolean check = seckillService.checkVerifyCode(seckillUser, goodsId, verifyCode);
         if (!check) {
+            System.out.println("运行至getSeckillPath 未通过检测");
             return Result.error(CodeMsg.REQUEST_ILLEGAL);
         }
         String path = seckillService.createSeckillPath(seckillUser, goodsId);

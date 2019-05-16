@@ -36,7 +36,6 @@ public class MQReceiver {
     @Autowired
     private SeckillService seckillService;
 
-
     @RabbitListener(queues = MQConfig.SECKILL_QUEUE)
     public void receive(String message) {
         log.info("receive message:" + message);
@@ -47,6 +46,7 @@ public class MQReceiver {
         //判断库存
         GoodsVO goods = goodsService.getGoodsVOById(goodsId);
         int stock = goods.getStockCount();
+        System.out.println("当前库存为："+stock);
         if (stock < 1) {
             return;
         }
@@ -54,7 +54,12 @@ public class MQReceiver {
         //判断是否已经秒杀到了
         SeckillOrder order = orderService.getSeckillOrderByUserIdGoodsId(user.getId(), goodsId);
         if (order != null) {
+            System.out.println("已生成该条订单该条订单");
             return;
         }
+//        System.out.println(order.getOrderId()+" :"+order.getGoodsId());
+        //减库存 下订单 写入秒杀订单
+//        miaoshaService.miaosha(user, goods);
+//        seckillService.seckill(user, goods);
     }
 }

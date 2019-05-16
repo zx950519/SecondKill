@@ -143,6 +143,7 @@ public class SeckillService {
         }
         Integer codeOld = redisService.get(SeckillKey.getSeckillVerifyCode, user.getId() + "," + goodsId, Integer.class);
         if (codeOld == null || codeOld - verifyCode != 0) {
+            System.out.println("codeOld不合法");
             return false;
         }
         redisService.delete(SeckillKey.getSeckillVerifyCode, user.getId() + "," + goodsId);

@@ -2,48 +2,48 @@
   "hints": [],
   "groups": [
     {
-      "sourceType": "com.zx.seckill.redis.RedisConfig",
+      "sourceType": "com.zx.miaosha.redis.RedisConfig",
       "name": "redis",
-      "type": "com.zx.seckill.redis.RedisConfig"
+      "type": "com.zx.miaosha.redis.RedisConfig"
     }
   ],
   "properties": [
     {
-      "sourceType": "com.zx.seckill.redis.RedisConfig",
+      "sourceType": "com.zx.miaosha.redis.RedisConfig",
       "name": "redis.host",
       "type": "java.lang.String"
     },
     {
-      "sourceType": "com.zx.seckill.redis.RedisConfig",
+      "sourceType": "com.zx.miaosha.redis.RedisConfig",
       "name": "redis.password",
       "type": "java.lang.String"
     },
     {
-      "sourceType": "com.zx.seckill.redis.RedisConfig",
+      "sourceType": "com.zx.miaosha.redis.RedisConfig",
       "defaultValue": 0,
       "name": "redis.pool-max-idle",
       "type": "java.lang.Integer"
     },
     {
-      "sourceType": "com.zx.seckill.redis.RedisConfig",
+      "sourceType": "com.zx.miaosha.redis.RedisConfig",
       "defaultValue": 0,
       "name": "redis.pool-max-total",
       "type": "java.lang.Integer"
     },
     {
-      "sourceType": "com.zx.seckill.redis.RedisConfig",
+      "sourceType": "com.zx.miaosha.redis.RedisConfig",
       "defaultValue": 0,
       "name": "redis.pool-max-wait",
       "type": "java.lang.Integer"
     },
     {
-      "sourceType": "com.zx.seckill.redis.RedisConfig",
+      "sourceType": "com.zx.miaosha.redis.RedisConfig",
       "defaultValue": 0,
       "name": "redis.port",
       "type": "java.lang.Integer"
     },
     {
-      "sourceType": "com.zx.seckill.redis.RedisConfig",
+      "sourceType": "com.zx.miaosha.redis.RedisConfig",
       "defaultValue": 0,
       "name": "redis.timeout",
       "type": "java.lang.Integer"
