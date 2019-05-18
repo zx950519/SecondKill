@@ -14,11 +14,9 @@ import com.zx.miaosha.vo.GoodsVo;
 public interface GoodsDao {
 	
 	@Select("select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg left join goods g on mg.goods_id = g.id")
-//	@Select("select g.*,sg.stock_count, sg.start_date, sg.end_date,sg.miaosha_price from miaosha_goods sg left join goods g on sg.goods_id = g.id")
 	public List<GoodsVo> listGoodsVo();
 
 	@Select("select g.*,mg.stock_count, mg.start_date, mg.end_date,mg.miaosha_price from miaosha_goods mg left join goods g on mg.goods_id = g.id where g.id = #{goodsId}")
-//	@Select("select g.*,sg.stock_count, sg.start_date, sg.end_date,sg.miaosha_price from miaosha_goods sg left join goods g on sg.goods_id = g.id where g.id = #{goodsId}")
 	public GoodsVo getGoodsVoByGoodsId(@Param("goodsId") long goodsId);
 
 	@Update("update miaosha_goods set stock_count = stock_count - 1 where goods_id = #{goodsId} and stock_count > 0")

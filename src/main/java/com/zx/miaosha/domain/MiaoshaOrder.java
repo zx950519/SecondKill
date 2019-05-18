@@ -3,7 +3,7 @@ package com.zx.miaosha.domain;
 public class MiaoshaOrder {
 	private Long id;
 	private Long userId;
-	private Long  orderId;
+	private Long orderId;
 	private Long goodsId;
 	public Long getId() {
 		return id;
