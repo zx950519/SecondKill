@@ -1,6 +1,6 @@
 # 秒杀系统实践
 
-![](http://ww1.sinaimg.cn/large/005L0VzSgy1g35j335xo9j30n607s74e.jpg)  
+![](http://ww1.sinaimg.cn/large/005L0VzSgy1g35j46wmvpj30mx06qt8v.jpg)
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)  
 ## :computer: 架构
 ![](http://ww1.sinaimg.cn/large/005L0VzSgy1g35im55pqzj313c08lq5d.jpg)  
