@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.zx</groupId>
-    <artifactId>miaosha</artifactId>
+    <artifactId>seckillori</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>miaosha</name>
+    <name>seckill</name>
     <description>A project for SpringBoot</description>
 
     <parent>
