@@ -15,15 +15,23 @@ import com.zx.seckill.result.Result;
 import com.zx.seckill.service.MiaoshaUserService;
 import com.zx.seckill.vo.LoginVo;
 
+/**
+ * @Description:登陆控制器
+ * @Author:Alitria
+ * @CreateDate:2019/05/17
+ * @UpdateUser:Alitria
+ * @UpdateDate:2019/05/17
+ * @UpdateRemark:
+ * @Version:
+ */
+
 @Controller
 @RequestMapping("/login")
 public class LoginController {
 
 	private static Logger log = LoggerFactory.getLogger(LoginController.class);
-	
 	@Autowired
 	MiaoshaUserService userService;
-	
 	@Autowired
 	RedisService redisService;
 	

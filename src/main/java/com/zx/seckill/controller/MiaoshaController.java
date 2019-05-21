@@ -36,56 +36,60 @@ import com.zx.seckill.service.MiaoshaUserService;
 import com.zx.seckill.service.OrderService;
 import com.zx.seckill.vo.GoodsVo;
 
+/**
+ * @Description:主入口
+ * @Author:Alitria
+ * @CreateDate:2019/05/17
+ * @UpdateUser:Alitria
+ * @UpdateDate:2019/05/17
+ * @UpdateRemark:
+ * @Version:
+ */
+
 @Controller
 @RequestMapping("/miaosha")
 public class MiaoshaController implements InitializingBean {
 
 	@Autowired
 	MiaoshaUserService userService;
-	
 	@Autowired
 	RedisService redisService;
-	
 	@Autowired
 	GoodsService goodsService;
-	
 	@Autowired
 	OrderService orderService;
-	
 	@Autowired
 	MiaoshaService miaoshaService;
-	
 	@Autowired
 	MQSender sender;
 	
 	private HashMap<Long, Boolean> localOverMap =  new HashMap<Long, Boolean>();
 	
-	/**
-	 * 系统初始化
-	 * */
+	// 系统初始化
 	public void afterPropertiesSet() throws Exception {
-		List<GoodsVo> goodsList = goodsService.listGoodsVo();
+		List<GoodsVo> goodsList = goodsService.listGoodsVo();       // 获取商品列表
 		if(goodsList == null) {
 			return;
 		}
 		for(GoodsVo goods : goodsList) {
-			redisService.set(GoodsKey.getMiaoshaGoodsStock, ""+goods.getId(), goods.getStockCount());
-			localOverMap.put(goods.getId(), false);
+			redisService.set(GoodsKey.getMiaoshaGoodsStock, ""+goods.getId(), goods.getStockCount());   // 写入缓存
+			localOverMap.put(goods.getId(), false);     // 更新本地卖超标志
 		}
 	}
-	
+
+	// 秒杀系统一键还原
 	@RequestMapping(value="/reset", method=RequestMethod.GET)
     @ResponseBody
     public Result<Boolean> reset(Model model) {
-		List<GoodsVo> goodsList = goodsService.listGoodsVo();
+		List<GoodsVo> goodsList = goodsService.listGoodsVo();       // 获取商品列表
 		for(GoodsVo goods : goodsList) {
-			goods.setStockCount(10);
-			redisService.set(GoodsKey.getMiaoshaGoodsStock, ""+goods.getId(), 10);
-			localOverMap.put(goods.getId(), false);
+			goods.setStockCount(10);        // 重置商品库存
+			redisService.set(GoodsKey.getMiaoshaGoodsStock, ""+goods.getId(), 10);      // 写入缓存
+			localOverMap.put(goods.getId(), false);     // 更新本地卖超标志
 		}
-		redisService.delete(OrderKey.getMiaoshaOrderByUidGid);
-		redisService.delete(MiaoshaKey.isGoodsOver);
-		miaoshaService.reset(goodsList);
+		redisService.delete(OrderKey.getMiaoshaOrderByUidGid);      // 删除订单
+		redisService.delete(MiaoshaKey.isGoodsOver);                // 删除卖超Key
+		miaoshaService.reset(goodsList);                            // 调用下层的Dao更新DB
 		return Result.success(true);
 	}
 	
@@ -94,42 +98,44 @@ public class MiaoshaController implements InitializingBean {
 	 * 5000 * 10
 	 * QPS: 2114
 	 * */
+	// 秒杀业务
     @RequestMapping(value="/{path}/do_miaosha", method=RequestMethod.POST)
     @ResponseBody
-    public Result<Integer> miaosha(Model model,MiaoshaUser user,
+    public Result<Integer> miaosha(Model model, MiaoshaUser user,
     		@RequestParam("goodsId")long goodsId,
     		@PathVariable("path") String path) {
     	model.addAttribute("user", user);
     	if(user == null) {
     		return Result.error(CodeMsg.SESSION_ERROR);
     	}
-    	//验证path
+    	// 验证传入的秒杀path是否合法
     	boolean check = miaoshaService.checkPath(user, goodsId, path);
-    	if(!check){
+    	if (!check) {
     		return Result.error(CodeMsg.REQUEST_ILLEGAL);
     	}
-    	//内存标记，减少redis访问
+    	// 通过内存标记，减少redis访问，用于判断是否卖超
     	boolean over = localOverMap.get(goodsId);
-    	if(over) {
+    	if (over) {
     		return Result.error(CodeMsg.MIAO_SHA_OVER);
     	}
-    	//预减库存
+    	// 预减库存，更新缓存
     	long stock = redisService.decr(GoodsKey.getMiaoshaGoodsStock, ""+goodsId);//10
-    	if(stock < 0) {
-    		 localOverMap.put(goodsId, true);
+    	if (stock < 0) {
+    	    localOverMap.put(goodsId, true);
     		return Result.error(CodeMsg.MIAO_SHA_OVER);
     	}
-    	//判断是否已经秒杀到了
+    	// 根据用户id以及商品id生成秒杀订单，订单存在与否可判断是否秒杀成功
     	MiaoshaOrder order = orderService.getMiaoshaOrderByUserIdGoodsId(user.getId(), goodsId);
     	if(order != null) {
     		return Result.error(CodeMsg.REPEATE_MIAOSHA);
     	}
-    	//入队
+    	// 进入消息队列做进一步处理
     	MiaoshaMessage mm = new MiaoshaMessage();
     	mm.setUser(user);
     	mm.setGoodsId(goodsId);
     	sender.sendMiaoshaMessage(mm);
-    	return Result.success(0);//排队中
+    	return Result.success(0);       // 排队中
+
     	/*
     	//判断库存
     	GoodsVo goods = goodsService.getGoodsVoByGoodsId(goodsId);//10个商品，req1 req2
@@ -153,6 +159,7 @@ public class MiaoshaController implements InitializingBean {
      * -1：秒杀失败
      * 0： 排队中
      * */
+    // 查询秒杀结果
     @RequestMapping(value="/result", method=RequestMethod.GET)
     @ResponseBody
     public Result<Long> miaoshaResult(Model model,MiaoshaUser user,
@@ -161,13 +168,14 @@ public class MiaoshaController implements InitializingBean {
     	if(user == null) {
     		return Result.error(CodeMsg.SESSION_ERROR);
     	}
-    	long result  =miaoshaService.getMiaoshaResult(user.getId(), goodsId);
+    	long result = miaoshaService.getMiaoshaResult(user.getId(), goodsId);   // 查询订单是否存在
     	return Result.success(result);
     }
     
     @AccessLimit(seconds=5, maxCount=5, needLogin=true)
     @RequestMapping(value="/path", method=RequestMethod.GET)
     @ResponseBody
+    // 获取秒杀路径(输入参数有一个验证码)
     public Result<String> getMiaoshaPath(HttpServletRequest request, MiaoshaUser user,
     		@RequestParam("goodsId")long goodsId,
     		@RequestParam(value="verifyCode", defaultValue="0")int verifyCode
@@ -179,14 +187,14 @@ public class MiaoshaController implements InitializingBean {
     	if(!check) {
     		return Result.error(CodeMsg.REQUEST_ILLEGAL);
     	}
-    	String path  =miaoshaService.createMiaoshaPath(user, goodsId);
+    	String path = miaoshaService.createMiaoshaPath(user, goodsId);      // 创建秒杀路径
     	return Result.success(path);
     }
-    
-    
+
     @RequestMapping(value="/verifyCode", method=RequestMethod.GET)
     @ResponseBody
-    public Result<String> getMiaoshaVerifyCod(HttpServletResponse response,MiaoshaUser user,
+    // 获取用于秒杀的校验图片
+    public Result<String> getMiaoshaVerifyCod(HttpServletResponse response, MiaoshaUser user,
     		@RequestParam("goodsId")long goodsId) {
     	if(user == null) {
     		return Result.error(CodeMsg.SESSION_ERROR);

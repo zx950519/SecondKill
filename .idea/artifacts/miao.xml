@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="ear" build-on-make="true" name="miao">
+    <output-path>$PROJECT_DIR$/out/artifacts/miao</output-path>
+    <root id="archive" name="miao.ear" />
+  </artifact>
+</component>

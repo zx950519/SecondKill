@@ -14,6 +14,16 @@ import com.zx.seckill.result.CodeMsg;
 import com.zx.seckill.result.Result;
 import com.zx.seckill.service.UserService;
 
+/**
+ * @Description:测试类控制器
+ * @Author:Alitria
+ * @CreateDate:2019/05/17
+ * @UpdateUser:Alitria
+ * @UpdateDate:2019/05/17
+ * @UpdateRemark:
+ * @Version:
+ */
+
 @Controller
 @RequestMapping("/demo")
 public class SampleController {

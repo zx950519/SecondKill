@@ -1,147 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="miao" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b23833fe-b4b7-4ac9-ade5-c1328e6cb280" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/seckill.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/seckill.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seckill.iml" beforeDir="false" afterPath="$PROJECT_DIR$/seckill.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/MainApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/access/AccessInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/access/AccessLimit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/access/UserContext.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/config/UserArgumentResolver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/config/WebConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/controller/GoodsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/controller/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/controller/MiaoshaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/controller/OrderController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/controller/SampleController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/dao/GoodsDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/dao/MiaoshaUserDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/dao/OrderDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/dao/UserDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/domain/Goods.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/domain/MiaoshaGoods.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/domain/MiaoshaOrder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/domain/MiaoshaUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/domain/OrderInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/domain/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/exception/GlobalException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/rabbitmq/MQConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/rabbitmq/MQReceiver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/rabbitmq/MQSender.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/rabbitmq/MiaoshaMessage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/redis/AccessKey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/redis/BasePrefix.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/redis/GoodsKey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/redis/KeyPrefix.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/redis/MiaoshaKey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/redis/MiaoshaUserKey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/redis/OrderKey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/redis/RedisConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/redis/RedisPoolFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/redis/RedisService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/redis/UserKey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/result/CodeMsg.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/result/Result.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/service/GoodsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/service/MiaoshaService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/service/MiaoshaUserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/service/OrderService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/util/DBUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/util/MD5Util.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/util/UUIDUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/util/UserUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/util/ValidatorUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/validator/IsMobile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/validator/IsMobileValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/vo/GoodsDetailVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/vo/GoodsVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/vo/LoginVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/miaosha/vo/OrderDetailVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/seckill.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/goods.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/miaosha_goods.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/miaosha_order.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/miaosha_user.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/order_info.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/seckill_fail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/MainApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/access/AccessInterceptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/access/AccessLimit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/access/UserContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/config/UserArgumentResolver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/config/WebConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/controller/GoodsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/controller/MiaoshaController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/controller/OrderController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/controller/SampleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/dao/GoodsDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/dao/MiaoshaUserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/dao/OrderDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/dao/UserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/domain/Goods.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/domain/MiaoshaGoods.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/domain/MiaoshaOrder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/domain/MiaoshaUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/domain/OrderInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/domain/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/exception/GlobalException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/exception/GlobalExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/rabbitmq/MQConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/rabbitmq/MQReceiver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/rabbitmq/MQSender.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/rabbitmq/MiaoshaMessage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/redis/AccessKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/redis/BasePrefix.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/redis/GoodsKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/redis/KeyPrefix.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/redis/MiaoshaKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/redis/MiaoshaUserKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/redis/OrderKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/redis/RedisConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/redis/RedisPoolFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/redis/RedisService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/redis/UserKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/result/CodeMsg.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/result/Result.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/service/GoodsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/service/MiaoshaService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/service/MiaoshaUserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/service/OrderService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/util/DBUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/util/MD5Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/util/UUIDUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/util/UserUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/util/ValidatorUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/validator/IsMobile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/validator/IsMobileValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/vo/GoodsDetailVo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/vo/GoodsVo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/vo/LoginVo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/miaosha/vo/OrderDetailVo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/seckill.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sql/goods.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sql/miaosha_goods.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sql/miaosha_order.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sql/miaosha_user.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sql/order_info.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/seckill_fail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/seckill/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zx/seckill/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/MiaoshaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/MiaoshaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/SampleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/SampleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zx/seckill/service/MiaoshaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zx/seckill/service/MiaoshaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/goods_detail.htm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/goods_detail.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/seckill/MainApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zx/seckill/MainApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/seckill/controller/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zx/seckill/controller/GoodsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/seckill/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zx/seckill/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/seckill/controller/MiaoshaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zx/seckill/controller/MiaoshaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/seckill/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zx/seckill/controller/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/seckill/controller/SampleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zx/seckill/controller/SampleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/seckill/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zx/seckill/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zx/seckill/service/MiaoshaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zx/seckill/service/MiaoshaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/goods_detail.htm" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/goods_detail.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -154,32 +45,71 @@
     <session id="414951784">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="10" />
+          <entry key="project.open.time.22" value="2" />
+          <entry key="project.open.time.25" value="2" />
+          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.29" value="1" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="1" />
-          <entry key="xml" value="1" />
+          <entry key="class" value="1" />
+          <entry key="htm" value="3" />
+          <entry key="html" value="9" />
+          <entry key="java" value="24" />
+          <entry key="jpg" value="4" />
+          <entry key="js" value="3" />
+          <entry key="properties" value="2" />
+          <entry key="txt" value="4" />
+          <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="1" />
-          <entry key="XML" value="1" />
+          <entry key="CLASS" value="1" />
+          <entry key="HTML" value="12" />
+          <entry key="Image" value="4" />
+          <entry key="JAVA" value="24" />
+          <entry key="JavaScript" value="3" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="Properties" value="2" />
+          <entry key="XML" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="htm" value="7" />
+          <entry key="html" value="49" />
+          <entry key="java" value="902" />
+          <entry key="js" value="3" />
+          <entry key="txt" value="11" />
+          <entry key="xml" value="133" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="56" />
+          <entry key="JAVA" value="902" />
+          <entry key="JavaScript" value="3" />
+          <entry key="PLAIN_TEXT" value="11" />
+          <entry key="XML" value="133" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zx/seckill/MainApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="405">
+              <caret line="19" column="28" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -187,25 +117,78 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="-1105">
+              <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/command.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="5" selection-start-column="5" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>setGoodsOver</find>
+      <find>login</find>
+      <find>applicationContext</find>
+      <find>g_passsword_salt</find>
+      <find>submitHandler</find>
+      <find>loginForm</find>
+      <find>validate</find>
+      <find>refreshVerifyCode</find>
+      <find>getMiaoshaPath</find>
+      <find>/goods_detail.htm</find>
+      <find>war</find>
+      <find>maven-plugin</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/command.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zx/seckill/MainApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/OrderController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/SampleController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/GoodsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/MiaoshaController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zx/seckill/service/MiaoshaService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/common.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/login.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/goods_detail.htm" />
+        <option value="$PROJECT_DIR$/src/main/resources/command.txt" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
@@ -214,21 +197,28 @@
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="seckill" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="seckill" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
       </expand>
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="27" />
-    <option name="y" value="7" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1364" />
+    <option name="height" value="1035" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -239,35 +229,12 @@
             <path>
               <item name="seckill" type="b2602c69:ProjectViewProjectNode" />
               <item name="seckill" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="seckill" type="b2602c69:ProjectViewProjectNode" />
-              <item name="seckill" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="seckill" type="b2602c69:ProjectViewProjectNode" />
-              <item name="seckill" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="seckill" type="b2602c69:ProjectViewProjectNode" />
-              <item name="seckill" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seckill" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -280,9 +247,21 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558161881352" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558439595876" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/WebRoot" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15429688" />
+    <property name="project.structure.side.proportion" value="0.23612751" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\72671\Desktop\seckill\src\main\resources\static\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\72671\Desktop\seckill\src\main\resources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -317,11 +296,29 @@
       <option name="presentableId" value="Default" />
       <updated>1558161469625</updated>
       <workItem from="1558161474532" duration="456000" />
+      <workItem from="1558165954238" duration="1423000" />
+      <workItem from="1558167518833" duration="123000" />
+      <workItem from="1558169636735" duration="154000" />
+      <workItem from="1558182697809" duration="4865000" />
+      <workItem from="1558230667770" duration="120000" />
+      <workItem from="1558233075771" duration="36000" />
+      <workItem from="1558317179946" duration="5931000" />
+      <workItem from="1558427564607" duration="6072000" />
+      <workItem from="1558439806407" duration="815000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="456000" />
+    <option name="totallyTimeSpent" value="19995000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -332,25 +329,25 @@
       <window_info id="Capture Tool" order="3" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.21313673" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.35460994" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Java Enterprise" order="2" />
+      <window_info anchor="bottom" id="Java Enterprise" order="2" weight="0.32907802" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="4" />
-      <window_info anchor="bottom" id="Spring" order="5" />
+      <window_info anchor="bottom" id="Version Control" order="4" weight="0.32907802" />
+      <window_info anchor="bottom" id="Spring" order="5" weight="0.32907802" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.57730496" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.2496454" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="bottom" id="TODO" order="12" weight="0.32907802" />
+      <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="BPMNPalette" order="1" />
-      <window_info anchor="right" id="Maven Projects" order="2" weight="0.3297587" />
+      <window_info anchor="right" id="Maven Projects" order="2" visible="true" weight="0.18699732" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
@@ -360,6 +357,41 @@
       <window_info anchor="right" id="Ant Build" order="9" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Image Layers" order="0" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Web" order="4" side_tool="true" />
+      <window_info id="Designer" order="5" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.28903976" />
+      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.3590844" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="2" weight="0.32907802" />
+      <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="4" weight="0.32907802" />
+      <window_info anchor="bottom" id="Spring" order="5" weight="0.32907802" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.46950355" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="BPMNPalette" order="1" />
+      <window_info anchor="right" id="Maven Projects" order="2" weight="0.4772066" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Bean Validation" order="6" />
+      <window_info anchor="right" id="Palette" order="7" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="8" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="9" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -368,26 +400,244 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx/seckill/service/MiaoshaUserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="-1370">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/OrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1087">
+          <caret line="57" column="65" selection-start-line="57" selection-start-column="65" selection-end-line="57" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/SampleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="30" column="15" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.3.14.RELEASE/spring-context-4.3.14.RELEASE.jar!/org/springframework/context/ApplicationContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx/seckill/service/GoodsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx/seckill/rabbitmq/MQConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx/seckill/rabbitmq/MQReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx/seckill/rabbitmq/MQSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/miaosha_fail.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/bg.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/bg3.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/bg2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/order_detail.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1053" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx/seckill/redis/MiaoshaKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/goods_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/goods_detail.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="108" column="25" lean-forward="true" selection-start-line="174" selection-start-column="8" selection-end-line="174" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/GoodsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="84" column="47" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="97" column="52" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx/seckill/controller/MiaoshaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="202" column="58" selection-start-line="202" selection-start-column="58" selection-end-line="202" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zx/seckill/service/MiaoshaService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="103" column="25" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zx/seckill/MainApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="405">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/command.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1105">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>miao</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.23612751" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>seckill</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
@@ -400,6 +650,21 @@
           </splitter-proportions>
         </settings>
       </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: ch.qos.logback:logback-classic:1.1.11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
     </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="" />
   </component>
 </project>

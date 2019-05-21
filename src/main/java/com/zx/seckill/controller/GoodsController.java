@@ -25,22 +25,28 @@ import com.zx.seckill.service.MiaoshaUserService;
 import com.zx.seckill.vo.GoodsDetailVo;
 import com.zx.seckill.vo.GoodsVo;
 
+/**
+ * @Description:商品控制器
+ * @Author:Alitria
+ * @CreateDate:2019/05/17
+ * @UpdateUser:Alitria
+ * @UpdateDate:2019/05/17
+ * @UpdateRemark:
+ * @Version:
+ */
+
 @Controller
 @RequestMapping("/goods")
 public class GoodsController {
 
 	@Autowired
 	MiaoshaUserService userService;
-	
 	@Autowired
 	RedisService redisService;
-	
 	@Autowired
 	GoodsService goodsService;
-	
 	@Autowired
 	ThymeleafViewResolver thymeleafViewResolver;
-	
 	@Autowired
 	ApplicationContext applicationContext;
 	
@@ -49,6 +55,7 @@ public class GoodsController {
 	 * 5000 * 10
 	 * QPS:2884, load:5 
 	 * */
+	// 根据秒杀用户实体，查询商品列表页(String类型)
     @RequestMapping(value="/to_list", produces="text/html")
     @ResponseBody
     public String list(HttpServletRequest request, HttpServletResponse response, Model model,MiaoshaUser user) {
@@ -58,53 +65,53 @@ public class GoodsController {
 //    	if(!StringUtils.isEmpty(html)) {
 //    		return html;
 //    	}
-    	List<GoodsVo> goodsList = goodsService.listGoodsVo();
-    	model.addAttribute("goodsList", goodsList);
+    	List<GoodsVo> goodsList = goodsService.listGoodsVo();   // 获取商品列表
+    	model.addAttribute("goodsList", goodsList);          // 加入返回数据中
 //    	 return "goods_list";
     	SpringWebContext ctx = new SpringWebContext(request,response,
-    			request.getServletContext(),request.getLocale(), model.asMap(), applicationContext );
-    	//手动渲染
+    			request.getServletContext(),
+                request.getLocale(),
+                model.asMap(),
+                applicationContext );
+    	// 手动渲染页面
     	String html = thymeleafViewResolver.getTemplateEngine().process("goods_list", ctx);
     	if(!StringUtils.isEmpty(html)) {
     		redisService.set(GoodsKey.getGoodsList, "", html);
     	}
     	return html;
     }
-    
+
+    // 根据秒杀用户实体与商品号查询秒杀商品页(String类型)
     @RequestMapping(value="/to_detail2/{goodsId}",produces="text/html")
     @ResponseBody
-    public String detail2(HttpServletRequest request, HttpServletResponse response, Model model,MiaoshaUser user,
+    public String detail2(HttpServletRequest request, HttpServletResponse response, Model model, MiaoshaUser user,
     		@PathVariable("goodsId")long goodsId) {
     	model.addAttribute("user", user);
-    	
-    	//取缓存
+    	// 取缓存
     	String html = redisService.get(GoodsKey.getGoodsDetail, ""+goodsId, String.class);
     	if(!StringUtils.isEmpty(html)) {
     		return html;
     	}
-    	//手动渲染
+    	// 手动渲染
     	GoodsVo goods = goodsService.getGoodsVoByGoodsId(goodsId);
-    	model.addAttribute("goods", goods);
-    	
+    	model.addAttribute("goods", goods);     // 添加商品实体
     	long startAt = goods.getStartDate().getTime();
     	long endAt = goods.getEndDate().getTime();
     	long now = System.currentTimeMillis();
-    	
     	int miaoshaStatus = 0;
     	int remainSeconds = 0;
-    	if(now < startAt ) {//秒杀还没开始，倒计时
+    	if(now < startAt ) {    // 秒杀还没开始，倒计时
     		miaoshaStatus = 0;
     		remainSeconds = (int)((startAt - now )/1000);
-    	}else  if(now > endAt){//秒杀已经结束
+    	}else  if(now > endAt){ // 秒杀已经结束
     		miaoshaStatus = 2;
     		remainSeconds = -1;
     	}else {//秒杀进行中
     		miaoshaStatus = 1;
     		remainSeconds = 0;
     	}
-    	model.addAttribute("miaoshaStatus", miaoshaStatus);
-    	model.addAttribute("remainSeconds", remainSeconds);
-//        return "goods_detail";
+    	model.addAttribute("miaoshaStatus", miaoshaStatus);     // 添加秒杀状态
+    	model.addAttribute("remainSeconds", remainSeconds);     // 添加秒杀倒计时
     	
     	SpringWebContext ctx = new SpringWebContext(request,response,
     			request.getServletContext(),request.getLocale(), model.asMap(), applicationContext );
@@ -142,6 +149,5 @@ public class GoodsController {
     	vo.setMiaoshaStatus(miaoshaStatus);
     	return Result.success(vo);
     }
-    
-    
+
 }

@@ -18,6 +18,8 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <packaging>war</packaging> <!-- 部署包类型 -->
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -28,13 +30,21 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <!--忽略内嵌tomcat，打包部署到tomcat。注*本地运行的时候要把这一段注释掉，要不然项目启动不了-->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
-        <!--<dependency>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
-        <!--<scope>provided</scope>-->
-        <!--</dependency>-->
+        <!-- 使用外置Tomcat -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -126,6 +136,18 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!---->
+                <configuration>
+                    <mainClass>com.zx.seckill.MainApplication</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <warName>MiaoSha</warName>
+                </configuration>
             </plugin>
         </plugins>
     </build>

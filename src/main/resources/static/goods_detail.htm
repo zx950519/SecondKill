@@ -150,7 +150,8 @@ function getMiaoshaResult(goodsId){
 
 function doMiaosha(path){
 	$.ajax({
-		url:"/miaosha/"+path+"/do_miaosha",
+		// url:"/miaosha/"+ +"/do_miaosha",
+		url:"/miaosha/"+ path +"/do_miaosha",
 		type:"POST",
 		data:{
 			goodsId:$("#goodsId").val()
