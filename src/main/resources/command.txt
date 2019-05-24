@@ -1,1 +1,1 @@
-打包命令：mvn compile war:war
+打包命令：mvn compile war:war/mvn clean package
