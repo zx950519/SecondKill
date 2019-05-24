@@ -31,8 +31,18 @@
 
 如果需要重置数据库，请访问http://服务器ip:8080/miaosha/reset  
 
-## :coffee: 压测分析
-建设中......  
+## :coffee: 调用链分析
+
+#### 登录页  
+![](http://ww1.sinaimg.cn/large/005L0VzSgy1g3cf97f9naj30qp0k0wez.jpg)  
+
+#### 商品列表页
+![](http://ww1.sinaimg.cn/large/005L0VzSgy1g3cfba2opyj30qe0jq0tk.jpg)  
+
+#### 商品详情&秒杀页
+![](http://ww1.sinaimg.cn/large/005L0VzSgy1g3cfc60jl1j30qb0jngmc.jpg)  
+![](http://ww1.sinaimg.cn/large/005L0VzSgy1g3cfcmcnfbj30qg0jvdh9.jpg)  
+
 
 ## :watermelon: 致谢
 建设中......  
