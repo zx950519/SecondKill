@@ -101,6 +101,7 @@ function getMiaoshaPath(){
 		success:function(data){
 			if(data.code == 0){
 				var path = data.data;
+				console.log(data);
 				doMiaosha(path);
 			}else{
 				layer.msg(data.msg);
@@ -121,6 +122,7 @@ function getMiaoshaResult(goodsId){
 			goodsId:$("#goodsId").val(),
 		},
 		success:function(data){
+		    console.log(data);
 			if(data.code == 0){
 				var result = data.data;
 				if(result < 0){
@@ -128,7 +130,7 @@ function getMiaoshaResult(goodsId){
 				}else if(result == 0){//继续轮询
 					setTimeout(function(){
 						getMiaoshaResult(goodsId);
-					}, 200);
+					}, 500);
 				}else{
 					layer.confirm("恭喜你，秒杀成功！查看订单？", {btn:["确定","取消"]},
 							function(){
@@ -149,6 +151,7 @@ function getMiaoshaResult(goodsId){
 }
 
 function doMiaosha(path){
+    console.log("/miaosha/"+ path +"/do_miaosha");
 	$.ajax({
 		// url:"/miaosha/"+ +"/do_miaosha",
 		url:"/miaosha/"+ path +"/do_miaosha",
@@ -159,6 +162,7 @@ function doMiaosha(path){
 		success:function(data){
 			if(data.code == 0){
 				//window.location.href="/order_detail.htm?orderId="+data.data.id;
+                // console.log(data);
 				getMiaoshaResult($("#goodsId").val());
 			}else{
 				layer.msg(data.msg);
@@ -173,7 +177,7 @@ function doMiaosha(path){
 
 function render(detail){
 	var miaoshaStatus = detail.miaoshaStatus;
-	var  remainSeconds = detail.remainSeconds;
+	var remainSeconds = detail.remainSeconds;
 	var goods = detail.goods;
 	var user = detail.user;
 	if(user){
@@ -196,13 +200,15 @@ $(function(){
 });
 
 function getDetail(){
-	var goodsId = g_getQueryString("goodsId");
+	var goodsId = g_getQueryString("goodsId"); // 从/goods_detail.htm?goodsId=${goods.id}中获取商品id
+    console.log(goodsId);
 	$.ajax({
 		url:"/goods/detail/"+goodsId,
 		type:"GET",
 		success:function(data){
 			if(data.code == 0){
-				render(data.data);
+				render(data.data);      // 返回代码为0，渲染页面
+                console.log(data.data);
 			}else{
 				layer.msg(data.msg);
 			}
@@ -229,7 +235,7 @@ function countDown(){
 		if(timeout){
 			clearTimeout(timeout);
 		}
-		$("#miaoshaTip").html("秒杀进行中");
+		$("#miaoshaTip").html("秒杀进行中"); // 向后台申请最新的校验码
 		$("#verifyCodeImg").attr("src", "/miaosha/verifyCode?goodsId="+$("#goodsId").val());
 		$("#verifyCodeImg").show();
 		$("#verifyCode").show();

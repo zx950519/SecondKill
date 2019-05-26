@@ -14,27 +14,30 @@ public class Result<T> {
 	private int code;
 	private String msg;
 	private T data;
-
+    // 返回成功的消息体
 	public static  <T> Result<T> success(T data){
 		return new Result<T>(data);
 	}
+    // 返回失败的消息体
 	public static  <T> Result<T> error(CodeMsg codeMsg){
 		return new Result<T>(codeMsg);
 	}
-	
+	// 成功时的消息构造函数
 	private Result(T data) {
+	    this.code = 0;
+	    this.msg = "success";
 		this.data = data;
 	}
-	
+    // 备用
 	private Result(int code, String msg) {
 		this.code = code;
 		this.msg = msg;
 	}
-	
+    // 失败时的消息构造函数
 	private Result(CodeMsg codeMsg) {
 		if(codeMsg != null) {
-			this.code = codeMsg.getCode();
-			this.msg = codeMsg.getMsg();
+			this.code = codeMsg.getCode();  // 设置失败的具体code
+			this.msg = codeMsg.getMsg();    // 设置失败的具体msg
 		}
 	}
 

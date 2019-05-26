@@ -78,6 +78,31 @@ public class MiaoshaUserService {
 		}
 		return user;
 	}
+
+	// 登录
+	public String loginByVue(HttpServletResponse response, String mobile, String password) {
+		if(mobile == null || mobile.length()==0 || password==null || password.length()==0) {
+			throw new GlobalException(CodeMsg.SERVER_ERROR);
+		}
+		// 判断手机号是否存在
+		MiaoshaUser user = getById(Long.parseLong(mobile));
+		if(user == null) {
+			throw new GlobalException(CodeMsg.MOBILE_NOT_EXIST);
+		}
+		// 验证密码
+		String dbPass = user.getPassword();
+		String saltDB = user.getSalt();
+		String calcPass = MD5Util.formPassToDBPass(password, saltDB);
+		System.out.println(password+"  "+password.getClass());
+		if(!calcPass.equals(dbPass)) {
+			throw new GlobalException(CodeMsg.PASSWORD_ERROR);
+		}
+		// 生成cookie
+		String token = UUIDUtil.uuid();
+		// 向缓存中添加Cookie
+		addCookie(response, token, user);
+		return token;
+	}
 	// 登录
 	public String login(HttpServletResponse response, LoginVo loginVo) {
 		if(loginVo == null) {
@@ -85,20 +110,22 @@ public class MiaoshaUserService {
 		}
 		String mobile = loginVo.getMobile();
 		String formPass = loginVo.getPassword();
-		//判断手机号是否存在
+		// 判断手机号是否存在
 		MiaoshaUser user = getById(Long.parseLong(mobile));
 		if(user == null) {
 			throw new GlobalException(CodeMsg.MOBILE_NOT_EXIST);
 		}
-		//验证密码
+		// 验证密码
 		String dbPass = user.getPassword();
 		String saltDB = user.getSalt();
 		String calcPass = MD5Util.formPassToDBPass(formPass, saltDB);
+        System.out.println(formPass+"  "+formPass.getClass());
 		if(!calcPass.equals(dbPass)) {
 			throw new GlobalException(CodeMsg.PASSWORD_ERROR);
 		}
-		//生成cookie
-		String token	 = UUIDUtil.uuid();
+		// 生成cookie
+		String token = UUIDUtil.uuid();
+		// 向缓存中添加Cookie
 		addCookie(response, token, user);
 		return token;
 	}

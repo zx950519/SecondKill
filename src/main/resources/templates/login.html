@@ -71,6 +71,7 @@
 <script>
 
 function login(){
+    // console.log("开始了");
 	$("#loginForm").validate({
         submitHandler:function(form){
              doLogin();
@@ -89,16 +90,22 @@ function doLogin(){
 	    type: "POST",
 	    data:{
 	    	mobile:$("#mobile").val(),
-	    	password: password
+            password: password
+            // name:"zhouxiang"
 	    },
 	    success:function(data){
 	    	layer.closeAll();
 	    	if(data.code == 0){
 	    		layer.msg("成功");
+                // console.log("消息体代码为: "+data.code);
+	    		// console.log("消息体类别为: "+data.msg);
+                // console.log("消息体数据为: "+data.data);
 	    		window.location.href="/goods/to_list";
 	    	}else{
 	    		layer.msg(data.msg);
+                // console.log("失败了");
 	    	}
+            // console.log("结束了");
 	    },
 	    error:function(){
 	    	layer.closeAll();

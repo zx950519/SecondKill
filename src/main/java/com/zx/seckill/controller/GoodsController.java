@@ -5,14 +5,14 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.zx.seckill.dao.MiaoshaUserDao;
+import jdk.nashorn.internal.ir.RuntimeNode;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.thymeleaf.spring4.context.SpringWebContext;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 
@@ -49,16 +49,25 @@ public class GoodsController {
 	ThymeleafViewResolver thymeleafViewResolver;
 	@Autowired
 	ApplicationContext applicationContext;
-	
-	/**
-	 * QPS:1267 load:15 mysql
-	 * 5000 * 10
-	 * QPS:2884, load:5 
-	 * */
-	// 根据秒杀用户实体，查询商品列表页(String类型)
+
+	@Autowired
+    MiaoshaUserDao miaoshaUserDao;
+
+    // 测试版查询商品列表页
+    @PostMapping(value="/list")
+    @ResponseBody
+    public List<GoodsVo> listAllOfObject(HttpServletRequest request, HttpServletResponse response) {
+//        model.addAttribute("user", user);
+        List<GoodsVo> goodsList = goodsService.listGoodsVo();   // 获取商品列表
+//        model.addAttribute("goodsList", goodsList);          // 加入返回数据中
+        return goodsList;
+    }
+
+	// 稳定版查询商品列表页(String类型)
     @RequestMapping(value="/to_list", produces="text/html")
     @ResponseBody
-    public String list(HttpServletRequest request, HttpServletResponse response, Model model,MiaoshaUser user) {
+    public String list(HttpServletRequest request, HttpServletResponse response,
+					   Model model, MiaoshaUser user) {
     	model.addAttribute("user", user);
     	//取缓存
 //    	String html = redisService.get(GoodsKey.getGoodsList, "", String.class);
@@ -121,7 +130,8 @@ public class GoodsController {
     	}
     	return html;
     }
-    
+
+    // 稳定版—查询商品细节
     @RequestMapping(value="/detail/{goodsId}")
     @ResponseBody
     public Result<GoodsDetailVo> detail(HttpServletRequest request, HttpServletResponse response, Model model,MiaoshaUser user,
@@ -148,6 +158,35 @@ public class GoodsController {
     	vo.setRemainSeconds(remainSeconds);
     	vo.setMiaoshaStatus(miaoshaStatus);
     	return Result.success(vo);
+    }
+    // 测试版—查询商品细节
+    @PostMapping(value="/mydetail/{goodsId}")
+    @ResponseBody
+    public Result<GoodsDetailVo> midetail(@RequestParam(value = "goodsId")long goodsId,
+                                          @RequestParam(value = "mobile") String mobile) {
+        GoodsVo goods = goodsService.getGoodsVoByGoodsId(goodsId);
+        long startAt = goods.getStartDate().getTime();
+        long endAt = goods.getEndDate().getTime();
+        long now = System.currentTimeMillis();
+        int miaoshaStatus = 0;
+        int remainSeconds = 0;
+        if(now < startAt ) {//秒杀还没开始，倒计时
+            miaoshaStatus = 0;
+            remainSeconds = (int)((startAt - now )/1000);
+        }else  if(now > endAt){//秒杀已经结束
+            miaoshaStatus = 2;
+            remainSeconds = -1;
+        }else {//秒杀进行中
+            miaoshaStatus = 1;
+            remainSeconds = 0;
+        }
+        GoodsDetailVo vo = new GoodsDetailVo();
+        vo.setGoods(goods);
+        MiaoshaUser user = miaoshaUserDao.getById(Long.parseLong(mobile));
+        vo.setUser(user);
+        vo.setRemainSeconds(remainSeconds);
+        vo.setMiaoshaStatus(miaoshaStatus);
+        return Result.success(vo);
     }
 
 }

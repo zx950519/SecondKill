@@ -143,6 +143,7 @@ public class MiaoshaService {
 		}
 		// 从Redis中获取验证码
 		Integer codeOld = redisService.get(MiaoshaKey.getMiaoshaVerifyCode, user.getId()+","+goodsId, Integer.class);
+		System.out.println("校验码为: "+codeOld);
 		if(codeOld == null || codeOld - verifyCode != 0 ) {
 			return false;
 		}
